@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Mecânica Viana - Especialistas em Reparo</title>
+    <style>
+        /* --- RESET BÁSICO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- HEADER / NAVEGAÇÃO --- */
+        header {
+            background-color: #1a1a1a; /* Cinza escuro */
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; /* Menu fixo no topo */
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff9800; /* Laranja mecânico */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff9800;
+        }
+
+        /* --- HERO (SEÇÃO PRINCIPAL) --- */
+        .hero {
+            height: 100vh; /* Ocupa a tela toda */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486262715619-72a6075f1519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e68900;
+        }
+
+        /* --- SERVIÇOS --- */
+        .services {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .services h2 {
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #1a1a1a;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: #ff9800;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- FORMULÁRIO DE CONTATO --- */
+        .contact {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .form-box {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #000;
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { display: none; } /* Menu some no mobile pra simplificar */
+            .logo { margin: 0 auto; }
+            header { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">AUTO MECÂNICA VIANA</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Seu carro em boas mãos</h1>
+        <p>Especialistas em mecânica geral, injeção eletrônica e manutenção preventiva. Qualidade e confiança que você precisa.</p>
+        <a href="#contato" class="btn">Agendar Orçamento</a>
+    </section>
+
+    <section class="services" id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>🔧 Revisão Geral</h3>
+                <p>Check-up completo do motor, freios e fluidos para garantir sua segurança na estrada.</p>
+            </div>
+            <div class="card">
+                <h3>🛢️ Troca de Óleo</h3>
+                <p>Utilizamos os melhores óleos do mercado para prolongar a vida útil do seu motor.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Elétrica</h3>
+                <p>Diagnóstico computadorizado para resolver falhas de sensores e bateria.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contato">
+        <h2>Fale Conosco</h2>
+        <p style="margin-bottom: 20px;">Preencha o formulário ou chame no WhatsApp.</p>
+        
+        <div class="form-box">
+            <form>
+                <div class="form-group">
+                    <label>Seu Nome</label>
+                    <input type="text" placeholder="Ex: Marcelo Viana">
+                </div>
+                <div class="form-group">
+                    <label>Modelo do Carro</label>
+                    <input type="text" placeholder="Ex: Gol G5, Civic 2010...">
+                </div>
+                <div class="form-group">
+                    <label>Mensagem</label>
+                    <textarea rows="4" placeholder="Descreva o problema..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Auto Mecânica Viana. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
