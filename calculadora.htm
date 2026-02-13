@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Simples</title>
+</head>
+<body>
+
+    <input type="number" id="n1" placeholder="Número 1">
+    
+    <select id="operador">
+        <option value="+">Somar (+)</option>
+        <option value="-">Subtrair (-)</option>
+        <option value="*">Multiplicar (*)</option>
+        <option value="/">Dividir (/)</option>
+    </select>
+
+    <input type="number" id="n2" placeholder="Número 2">
+    
+    <button onclick="calcular()">Calcular</button>
+
+    <h3 id="resultado">Resultado: </h3>
+
+    <script>
+        function calcular() {
+            // 1. Pega os valores da tela
+            var n1 = parseFloat(document.getElementById('n1').value);
+            var n2 = parseFloat(document.getElementById('n2').value);
+            var op = document.getElementById('operador').value;
+            var total;
+
+            // 2. Faz a conta
+            if (op === '+') total = n1 + n2;
+            else if (op === '-') total = n1 - n2;
+            else if (op === '*') total = n1 * n2;
+            else if (op === '/') total = n2 !== 0 ? n1 / n2 : 'Erro';
+
+            // 3. Mostra na tela
+            document.getElementById('resultado').innerText = "Resultado: " + total;
+        }
+    </script>
+
+</body>
+</html>
